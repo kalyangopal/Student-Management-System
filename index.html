@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧑‍🎓Student Details Entry</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Correct Excel CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-4">
+
+    <h1 class="text-center text-3xl font-bold text-gray-800 mb-2">
+        Apollo Computer Education
+    </h1>
+
+    <h2 class="text-center text-xl font-semibold text-blue-600 mb-8">
+        Student Details Entry
+    </h2>
+
+    <!-- Form -->
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white p-6 rounded-xl shadow-lg">
+
+        <div>
+            <label class="font-semibold">Student Name</label>
+            <input id="name" type="text" class="w-full p-2 border rounded-lg" placeholder="Enter student name">
+        </div>
+
+        <div>
+            <label class="font-semibold">Courses</label>
+            <input id="courses" type="text" class="w-full p-2 border rounded-lg" placeholder="Enter Course">
+        </div>
+
+        <div>
+            <label class="font-semibold">Course Fees</label>
+            <input id="courseFees" type="number" class="w-full p-2 border rounded-lg" placeholder="Enter Course Fees">
+        </div>
+
+        <div>
+            <label class="font-semibold">Mobile Number</label>
+            <input id="mobileNumber" type="number" class="w-full p-2 border rounded-lg" placeholder="Enter Mobile Number">
+        </div>
+
+        <div>
+            <label class="font-semibold">Joining Date</label>
+            <input id="joiningDate" type="date" class="w-full p-2 border rounded-lg">
+        </div>
+
+        <div>
+            <label class="font-semibold">Payment-1</label>
+            <input id="Payment1" type="number" class="w-full p-2 border rounded-lg">
+        </div>
+
+        <div>
+            <label class="font-semibold">Payment-2</label>
+            <input id="Payment2" type="number" class="w-full p-2 border rounded-lg">
+        </div>
+
+        <div>
+            <label class="font-semibold">Payment-3</label>
+            <input id="Payment3" type="number" class="w-full p-2 border rounded-lg">
+        </div>
+
+        <div>
+            <label class="font-semibold">Payment-4</label>
+            <input id="Payment4" type="number" class="w-full p-2 border rounded-lg">
+        </div>
+
+        <div>
+            <label class="font-semibold">Payment-5</label>
+            <input id="Payment5" type="number" class="w-full p-2 border rounded-lg">
+        </div>
+
+        <div>
+            <label class="font-semibold">Payment-6</label>
+            <input id="Payment6" type="number" class="w-full p-2 border rounded-lg">
+        </div>
+
+        <div>
+            <label class="font-semibold">Balance Fees</label>
+            <input id="balanceFees" type="number" class="w-full p-2 border rounded-lg">
+        </div>
+
+        <div class="md:col-span-2">
+            <label class="font-semibold">Total Fees</label>
+            <input id="totalFees" type="number" class="w-full p-2 border rounded-lg">
+        </div>
+
+        <div class="md:col-span-2">
+            <label class="font-semibold">Comments</label>
+            <input type="text" id="comments" class="w-full p-2 border rounded-lg">
+        </div>
+
+        <button type="button" onclick="addStudent(event)" 
+            class="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg w-full md:col-span-2">
+            Add Student
+        </button>
+
+    </form>
+
+    <!-- Table -->
+    <div class="mt-8 overflow-x-auto">
+        <table id="studentTable" class="w-full border-collapse bg-white shadow-lg rounded-lg">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="py-2 px-3">Sl No.</th>
+                    <th class="py-2 px-3">Name</th>
+                    <th class="py-2 px-3">Courses</th>
+                    <th class="py-2 px-3">Course Fees</th>
+                    <th class="py-2 px-3">Mobile Number</th>
+                    <th class="py-2 px-3">Joining Date</th>
+                    <th class="py-2 px-3">Payment-1</th>
+                    <th class="py-2 px-3">Payment-2</th>
+                    <th class="py-2 px-3">Payment-3</th>
+                    <th class="py-2 px-3">Payment-4</th>
+                    <th class="py-2 px-3">Payment-5</th>
+                    <th class="py-2 px-3">Payment-6</th>
+                    <th class="py-2 px-3">Total Fees</th>
+                    <th class="py-2 px-3">Balance Fees</th>
+                    <th class="py-2 px-3">Balance Status</th>
+                    <th class="py-2 px-3">Comments</th>
+                    <th class="py-2 px-3">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <button onclick="exportToExcel()"
+        class="mt-6 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2 rounded-lg block mx-auto">
+        Download Excel
+    </button>
+
+    <footer class="text-center mt-8 text-gray-600">©Apollo Computer Education 2025</footer>
+
+    <!-- JS (Correct Path Required) -->
+    <script src="./script.js"></script>
+
+</body>
+</html>
